@@ -2,6 +2,9 @@ const cells = document.querySelectorAll('.cell');
 let currentPlayer = 'X';
 let board = ['', '', '', '', '', '', '', '', ''];
 
+const crossSVG = '<img src="src/cross.svg" alt="X" class="icon"/>';
+const circleSVG = '<img src="src/circle.svg" alt="O" class="icon"/>';
+
 //winnig patterns
 const winPatterns = [
     [0, 1, 2],
@@ -54,7 +57,13 @@ const handleClick = (e) => {
     if (board[index] !== "") //ячейка уже занята
         return ;
     board[index] = currentPlayer;
-    e.target.textContent = currentPlayer;
+
+    if (currentPlayer === 'X') {
+        e.target.innerHTML = crossSVG;
+      } else {
+        e.target.innerHTML = circleSVG;
+      }
+
     if (checkWinner()) {
         return;
     }

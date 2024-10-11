@@ -1,24 +1,43 @@
 #game-board {
     display: grid;
-    grid-template-columns: repeat(3, 100px); /* 3 columns 100px each*/
-    grid-template-rows: (3, 100px); /* 3 rows 100px each*/
+    grid-template-columns: repeat(3, 170px); /* 3 колонки по 170px */
+    grid-template-rows: repeat(3, 170px);    /* 3 строки по 170px */
+    gap: 15px;  /* расстояние между ячейками 15px */
+    width: 540px; /* ширина всей доски */
+    height: 540px; /* высота всей доски */
+    margin: 0 auto; /* Чтобы доска была по центру страницы */
+  }
+
+body {
+    background-color: #1A1A1A;
+}
+h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 45px;
+    color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 100px;
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    border-right: 2px solid black;
-    border-bottom: 2px solid black;
+    width: 170px;
+    height: 170px;
+    background-color: #2F2F2F; /* Цвет ячейки */
+    border-radius: 20px;
+    display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    cursor: pointer;
 }
 
-.cell:nth-child(-n+3) {
-    border-top: 2px solid black;
+.iconCross {
+    width: 115px;
+    height: 115px;
+    object-fit: contain; /*save svg proportions*/
 }
 
-.cell:nth-child(3n-2) {
-    border-left: 2px solid black;
+.iconCircle {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; /*save svg proportions*/
 }
