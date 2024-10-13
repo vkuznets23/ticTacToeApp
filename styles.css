@@ -10,15 +10,36 @@
 
 body {
     background-color: #1A1A1A;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
-h1 {
+.scoreboard {
     font-family: 'Archivo Black', sans-serif;
-    font-size: 45px;
-    color: #FFFFFF;
-    text-align: center;
+    font-size: 40px;
+    color: #B3B3B3;
     text-transform: uppercase;
     margin-bottom: 100px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Разделяет элементы по краям */
+    width: 1110px; /* Общая ширина панели */
 }
+
+.player {
+    display: flex;
+    align-items: center;
+}
+
+.player-icon {
+    margin-right: 25px;
+}
+
+.score-separator {
+    margin: 0 10px; /* Пространство между счетами игроков */
+}
+
 
 .cell {
     width: 170px;

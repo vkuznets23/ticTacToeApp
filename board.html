@@ -9,7 +9,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>level 1</h1>
+    <div class="scoreboard">
+        <div class="player player1">
+            <span class="player-icon">X</span>
+            <span class="player-name">Player 1</span>
+        </div>
+        <span class="score">
+            <span id="player1-score">0</span>
+            <span class="score-separator">:</span>
+            <span id="player2-score">0</span>
+        </span>
+        <div class="player player2">
+            <span class="player-icon">O</span> <!-- Иконка нолика для игрока 2 -->
+            <span class="player-name">Player 2</span>
+        </div>
+    </div>
     <!--create elevent-->
     <div id= "game-board">
         <div class="cell" data-index="0"></div>
