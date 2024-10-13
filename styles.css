@@ -22,7 +22,6 @@ body {
     margin-bottom: 100px;
     margin-top: 30px;
     display: flex;
-    align-items: center;
     justify-content: space-between; /* Разделяет элементы по краям */
     width: 1110px; /* Общая ширина панели */
 }
@@ -30,6 +29,12 @@ body {
 .player {
     display: flex;
     align-items: center;
+    opacity: 0.3; /* По умолчанию игрок неактивен */
+    transition: opacity 0.3s ease; /* Плавный переход */
+}
+
+.player.active {
+    opacity: 1; /* Полная непрозрачность для активного игрока */
 }
 
 .player-icon {
@@ -52,13 +57,13 @@ body {
 }
 
 .iconCross {
-    width: 115px;
-    height: 115px;
+    width: 32px;
+    height: 32px;
     object-fit: contain; /*save svg proportions*/
 }
 
 .iconCircle {
-    width: 120px;
-    height: 120px;
+    width: 40px;
+    height: 40px;
     object-fit: contain; /*save svg proportions*/
 }

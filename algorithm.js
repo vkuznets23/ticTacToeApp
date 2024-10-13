@@ -5,6 +5,14 @@ let board = ['', '', '', '', '', '', '', '', ''];
 const crossSVG = '<img src="src/cross.svg" alt="X" class="icon"/>';
 const circleSVG = '<img src="src/circle.svg" alt="O" class="icon"/>';
 
+let player1Score = 0;
+let player2Score = 0;
+
+const player1 = document.querySelector('.player1');
+const player2 = document.querySelector('.player2');
+
+player1.classList.add('active');
+
 //winnig patterns
 const winPatterns = [
     [0, 1, 2],
@@ -25,6 +33,13 @@ const checkWinner = () => {
                 alert(`${board[a]} wins!`);
                 resetGame();
             }, 100);
+            if (board[a] === 'X') {
+              player1Score++;
+              document.getElementById('player1-score').textContent = player1Score;
+            } else {
+              player2Score++;
+              document.getElementById('player2-score').textContent = player2Score;
+            } 
             return true;
         }
     }
@@ -73,6 +88,15 @@ const handleClick = (e) => {
 
     //change the player
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+
+    // change active player
+    if (currentPlayer === 'X') {
+      player1.classList.add('active');
+      player2.classList.remove('active');
+    } else {
+      player1.classList.remove('active');
+      player2.classList.add('active');
+  }
 };
 
   // Reset game
