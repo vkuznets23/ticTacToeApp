@@ -13,6 +13,22 @@ const player2 = document.querySelector('.player2');
 
 player1.classList.add('active');
 
+let seconds = 0;
+let timerInterval;
+const timerDisplay = document.querySelector('.timer')
+const startTimer = () => {
+  timerInterval = setInterval(() => {
+      seconds++;
+      const minutes = Math.floor(seconds / 60);
+      const remainingSeconds = seconds % 60;
+
+      // Форматируем время в "mm:ss"
+      const formattedTime = `${String(minutes).padStart(2, '0')}:${String(remainingSeconds).padStart(2, '0')}`;
+      timerDisplay.textContent = formattedTime;
+  }, 1000);
+};
+startTimer();
+
 //winnig patterns
 const winPatterns = [
     [0, 1, 2],

@@ -1,69 +1,103 @@
-#game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 170px); /* 3 колонки по 170px */
-    grid-template-rows: repeat(3, 170px);    /* 3 строки по 170px */
-    gap: 15px;  /* расстояние между ячейками 15px */
-    width: 540px; /* ширина всей доски */
-    height: 540px; /* высота всей доски */
-    margin: 0 auto; /* Чтобы доска была по центру страницы */
-  }
-
+/* ----------------- Basic Styles ----------------- */
 body {
-    background-color: #1A1A1A;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-}
-.scoreboard {
-    font-family: 'Archivo Black', sans-serif;
-    font-size: 40px;
-    color: #B3B3B3;
-    text-transform: uppercase;
-    margin-bottom: 100px;
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-between; /* Разделяет элементы по краям */
-    width: 1110px; /* Общая ширина панели */
+    font-family: 'Archivo Black', sans-serif; /* Font family for the body */
+    background-color: #1A1A1A; /* Background color of the page */
+    align-items: center; /* Center items vertically */
+    display: flex; /* Use flexbox layout */
+    flex-direction: column; /* Stack items vertically */
 }
 
+/* ----------------- Game Container Styles ----------------- */
+.game-container {
+    display: flex; /* Places the board and timer in a row */
+    flex-direction: column; /* Default direction for stacking */
+    justify-content: space-between; /* Space between elements */
+    align-items: flex-end; /* Align the timer to the right */
+    width: 1110px; /* Width of the game container */
+}
+
+/* ----------------- Game Board Styles ----------------- */
+#game-board {
+    display: grid; /* Use grid layout for the board */
+    grid-template-columns: repeat(3, 170px); /* 3 columns of 170px */
+    grid-template-rows: repeat(3, 170px); /* 3 rows of 170px */
+    gap: 15px; /* Gap between cells */
+    width: 540px; /* Total width of the board */
+    height: 540px; /* Total height of the board */
+    margin: 0 auto; /* Center the board on the page */
+}
+
+/* ----------------- Scoreboard Styles ----------------- */
+.scoreboard {
+    font-size: 40px; /* Font size for the scoreboard */
+    color: #B3B3B3; /* Text color */
+    text-transform: uppercase; /* Transform text to uppercase */
+    margin-bottom: 100px; /* Space below the scoreboard */
+    margin-top: 30px; /* Space above the scoreboard */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space elements to the edges */
+    width: 1110px; /* Total width of the scoreboard */
+}
+
+/* ----------------- Player Styles ----------------- */
 .player {
-    display: flex;
-    align-items: center;
-    opacity: 0.3; /* По умолчанию игрок неактивен */
-    transition: opacity 0.3s ease; /* Плавный переход */
+    display: flex; /* Use flexbox for player layout */
+    align-items: center; /* Center items vertically */
+    opacity: 0.3; /* Default opacity for inactive players */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
 }
 
 .player.active {
-    opacity: 1; /* Полная непрозрачность для активного игрока */
+    opacity: 1; /* Full opacity for the active player */
 }
 
 .player-icon {
-    margin-right: 25px;
+    margin-right: 25px; /* Space to the right of the player icon */
 }
 
+/* ----------------- Score Separator Styles ----------------- */
 .score-separator {
-    margin: 0 10px; /* Пространство между счетами игроков */
+    margin: 0 10px; /* Space between player scores */
 }
 
+/* ----------------- Timer Styles ----------------- */
+.timer-container {
+    display: flex; /* Use flexbox for timer layout */
+    font-size: 30px; /* Font size for the timer */
+    color: #484848; /* Color of the timer text */
+    align-items: center; /* Vertically center timer elements */
+}
 
+.smallIcons {
+    margin-right: 10px; /* Space to the right of small icons */
+}
+
+.iconTimer {
+    width: 45px; /* Set width for the timer icon */
+    height: 45px; /* Set height for the timer icon */
+    margin-right: 15px; /* Space to the right of the timer icon */
+}
+
+/* ----------------- Cell Styles ----------------- */
 .cell {
-    width: 170px;
-    height: 170px;
-    background-color: #2F2F2F; /* Цвет ячейки */
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 170px; /* Width of each cell */
+    height: 170px; /* Height of each cell */
+    background-color: #2F2F2F; /* Background color of the cell */
+    border-radius: 20px; /* Rounded corners for the cell */
+    display: flex; /* Use flexbox for cell content */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
 }
 
+/* ----------------- Icon Styles ----------------- */
 .iconCross {
-    width: 32px;
-    height: 32px;
-    object-fit: contain; /*save svg proportions*/
+    width: 32px; /* Width of the cross icon */
+    height: 32px; /* Height of the cross icon */
+    object-fit: contain; /* Maintain aspect ratio for SVG */
 }
 
 .iconCircle {
-    width: 40px;
-    height: 40px;
-    object-fit: contain; /*save svg proportions*/
+    width: 40px; /* Width of the circle icon */
+    height: 40px; /* Height of the circle icon */
+    object-fit: contain; /* Maintain aspect ratio for SVG */
 }
