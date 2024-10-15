@@ -51,25 +51,67 @@ const winPatterns = [
     [2, 4, 6]
 ];
 
+const popup = document.querySelector('.popup');
+const popupPlayer = document.getElementById('popup-player');
+const popupClose = document.getElementById('popup-close');
+const blurBackground = document.getElementById('blur-background');
+
+// Function to show the popup
+const showPopup = (winner) => {
+  popupPlayer.textContent = winner; // Set the winner's name in the popup
+  popup.style.display = 'flex';
+  blurBackground.style.display = 'block';
+
+  if (winner.includes('X')) {
+    popup.classList.add('popup-win-x');
+    popup.classList.remove('popup-win-o');
+    popupClose.classList.add('popup-button-win-x');
+    popupClose.classList.remove('popup-button-win-o');
+  } else {
+    popup.classList.add('popup-win-o');
+    popup.classList.remove('popup-win-x');
+    popupClose.classList.add('popup-button-win-o');
+    popupClose.classList.remove('popup-button-win-x');
+}
+
+  // Disable further clicks on the game board
+  cells.forEach(cell => cell.style.pointerEvents = 'none');
+};
+
+// Function to hide the popup
+const hidePopup = () => {
+  popup.style.display = 'none'; // Hide the popup
+  blurBackground.style.display = 'none';
+
+  popup.classList.remove('popup-win-x', 'popup-win-o');
+  popupClose.classList.remove('popup-button-win-x', 'popup-button-win-o');
+  
+  // Enable clicks on the game board
+  cells.forEach(cell => cell.style.pointerEvents = 'auto');
+};
+
+popupClose.addEventListener('click', () => {
+  hidePopup(); // Hide the popup
+  resetGame(); // Reset the game
+});
+
 // Function to check for a winner
 const checkWinner = () => {
     for (let pattern of winPatterns) {
         const [a, b, c] = pattern; // Destructure pattern into variables
         if (board[a] && board[a] === board[b] && board[b] === board[c]) {
-            setTimeout(() => {
-                alert(`${board[a]} wins!`); // Alert the winner
-                resetGame(); // Reset the game
-            }, 100);
-
-            // Update scores based on the winner
+          setTimeout(() => {
+            showPopup(`Congrats! ${board[a]} wins!`); // Показываем попап
+            // Обновляем счет победителя
             if (board[a] === 'X') {
                 player1Score++;
-                document.getElementById('player1-score').textContent = player1Score; // Update player 1 score
+                document.getElementById('player1-score').textContent = player1Score;
             } else {
                 player2Score++;
-                document.getElementById('player2-score').textContent = player2Score; // Update player 2 score
+                document.getElementById('player2-score').textContent = player2Score;
             }
-            return true; // Return true if there is a winner
+        }, 100);
+        return true;
         }
     }
     return false; // Return false if there is no winner
@@ -79,7 +121,7 @@ const checkWinner = () => {
 const checkTie = () => {
     if (!board.includes('') && !checkWinner()) {
         setTimeout(() => {
-            alert("It's a tie!"); // Alert if it's a tie
+            showPopup("It's a tie!"); // Show the popup if it's a tie
             resetGame(); // Reset the game
         }, 100);
         return true; // Return true if there is a tie
@@ -124,4 +166,3 @@ const resetGame = () => {
 
 // Add click event listeners to each cell
 cells.forEach(cell => cell.addEventListener('click', handleClick));
-
