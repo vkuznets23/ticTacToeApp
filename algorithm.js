@@ -65,14 +65,25 @@ const showPopup = (winner) => {
   if (winner.includes('X')) {
     popup.classList.add('popup-win-x');
     popup.classList.remove('popup-win-o');
+    popup.classList.remove('popup-tie');
     popupClose.classList.add('popup-button-win-x');
     popupClose.classList.remove('popup-button-win-o');
-  } else {
+    popupClose.classList.remove('popup-button-tie');
+  } else if (winner.includes('O')) {
     popup.classList.add('popup-win-o');
     popup.classList.remove('popup-win-x');
+    popup.classList.remove('popup-tie');
     popupClose.classList.add('popup-button-win-o');
     popupClose.classList.remove('popup-button-win-x');
-}
+    popupClose.classList.remove('popup-button-tie');
+  } else {
+    popup.classList.add('popup-tie');
+    popup.classList.remove('popup-win-x');
+    popup.classList.remove('popup-win-o');
+    popupClose.classList.add('popup-button-tie');
+    popupClose.classList.remove('popup-button-win-x');
+    popupClose.classList.remove('popup-button-win-o');
+  }
 
   // Disable further clicks on the game board
   cells.forEach(cell => cell.style.pointerEvents = 'none');
@@ -85,7 +96,7 @@ const hidePopup = () => {
 
   popup.classList.remove('popup-win-x', 'popup-win-o');
   popupClose.classList.remove('popup-button-win-x', 'popup-button-win-o');
-  
+
   // Enable clicks on the game board
   cells.forEach(cell => cell.style.pointerEvents = 'auto');
 };

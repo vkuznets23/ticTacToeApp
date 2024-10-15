@@ -179,3 +179,12 @@ body {
     background-color: #E07F2F; /* Оранжевый цвет */
     color: #FFF; 
 }
+
+.popup-button-tie:hover  {
+    background-color: #CFCFCF; /* Оранжевый цвет */
+    color: #2F2F2F; 
+}
+
+.popup-tie {
+    border-color: #CFCFCF; /* Оранжевый цвет */
+}
