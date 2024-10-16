@@ -1,6 +1,7 @@
 // Select all cells in the game board
 const cells = document.querySelectorAll('.cell');
 
+
 // Initialize variables for the current player and the game board state
 let currentPlayer = 'X';
 let board = ['', '', '', '', '', '', '', '', ''];

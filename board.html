@@ -30,6 +30,17 @@
         </div>
     </div>
     <div class="game-container">
+        <div class="left-containert">
+            <div class="restart-container">
+                <span>
+                    <img src="src/iconamoon_restart-fill.svg" alt="restart" class="iconRestart"/>
+                </span>
+                <span class="restart">restart</span>
+            </div>
+            <div class="levels-container">
+                <span class="level">level 1</span>
+            </div>
+        </div>
         <div id="game-board">
             <div class="cell" data-index="0"></div>
             <div class="cell" data-index="1"></div>
@@ -41,18 +52,26 @@
             <div class="cell" data-index="7"></div>
             <div class="cell" data-index="8"></div>
         </div>
-        <div class="timer-container"> <!-- Таймер находится здесь -->
-            <span>
-                <img src="src/ph_timer.svg" alt="timer" class="iconTimer"/>
-            </span>
-            <span class="timer">00:00</span>
+        <div class="right-containert">
+            <div class="timer-container">
+                <span>
+                    <img src="src/ph_timer.svg" alt="timer" class="iconTimer"/>
+                </span>
+                <span class="timer">00:00</span>
+            </div>
+            <div class="rules-container">
+                <span>
+                    <img src="src/help.svg" alt="rules" class="rulesIcon"/>
+                </span>
+                <span class="rules-button">rules</span>
+            </div>
         </div>
+    </div>
         <div class="blur-background" id="blur-background"></div>
         <div class="popup" style="display: none;">
             <span id="popup-player"></span>
             <button id="popup-close">New Game</button>
         </div>
-    </div>
     <script src="algorithm.js"></script>
 </body>
 </html>
