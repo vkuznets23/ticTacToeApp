@@ -176,5 +176,12 @@ const resetGame = () => {
     cells.forEach(cell => cell.textContent = ''); // Clear all cell contents
 };
 
+const restartButton = document.querySelector('.restart');
+if (restartButton) {
+    restartButton.addEventListener('click', resetGame);
+  } else {
+    console.error('Button with class .restart not found');
+  }
+
 // Add click event listeners to each cell
 cells.forEach(cell => cell.addEventListener('click', handleClick));

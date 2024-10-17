@@ -94,7 +94,14 @@ body {
     justify-content: space-between;
     flex-direction: row;
     align-items: center;
+    opacity: 0.3;
+    color: #B3B3B3;
+    transition: opacity 0.3s ease, color 0.3s ease;
     height: 45px;
+}
+
+.restart-container:hover {
+    opacity: 1;
 }
 
 .rules-container {
