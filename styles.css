@@ -147,6 +147,13 @@ body {
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
 }
+.cell:hover {
+    background-color: #484848;
+}
+
+.cell.occupied {
+    background-color: #2F2F2F;
+}
 
 /* ----------------- Icon Styles ----------------- */
 .iconCross {

@@ -150,6 +150,7 @@ const handleClick = (e) => {
     // Update the board state and cell content
     board[index] = currentPlayer;
     e.target.innerHTML = currentPlayer === 'X' ? crossSVG : circleSVG;
+    e.target.classList.add('occupied');
 
     // Check for a winner or tie after each move
     if (checkWinner() || checkTie()) {
