@@ -174,7 +174,10 @@ const handleClick = (e) => {
 const resetGame = () => {
     board = ['', '', '', '', '', '', '', '', '']; // Reset board state
     currentPlayer = 'X'; // Set current player back to X
-    cells.forEach(cell => cell.textContent = ''); // Clear all cell contents
+    cells.forEach(cell => {
+        cell.textContent = ''; // Clear the cell content
+        cell.classList.remove('occupied'); // Remove the occupied class to allow hovering
+    });
 };
 
 const restartButton = document.querySelector('.restart');
