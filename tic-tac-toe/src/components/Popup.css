@@ -1,0 +1,90 @@
+/* ----------------- Pop-up Styles ----------------- */
+.popup {
+    width: 700px;
+    height: 440px;
+    border: 10px solid #5333D8;
+    border-radius: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1A1A1A;
+    display: flex;            /* Включаем Flexbox */
+    flex-direction: column;   /* Располагаем элементы по вертикали */
+    justify-content: center;  /* Центрируем элементы по вертикали */
+    align-items: center;      /* Центрируем элементы по горизонтали */
+    z-index: 1000;            /* Уровень выше других элементов */
+    text-align: center;
+}
+
+#popup-text,
+#popup-player {
+    font-size: 45px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.popup button {
+    margin-top: 40px;
+    width: 220px;
+    height: 65px;;
+    font-family: 'Urbanist', sans-serif;
+    text-transform: lowercase;
+    padding: 10px 20px;       /* Внутренние отступы для кнопки */
+    font-size: 25px;          /* Размер шрифта для кнопки */
+    color: #CFCFCF;           /* Цвет текста кнопки */
+    background-color: transparent; /* Убираем заливку кнопки */
+    border: 2px solid #CFCFCF; /* Граница кнопки */
+    border-radius: 85px;      /* Скругленные углы кнопки */
+    cursor: pointer;          /* Указатель на клик */
+    transition: background-color 0.5s ease; /* Плавная смена фона при наведении */
+}
+
+/* Класс для размытия фона */
+.blur-background {
+    position: fixed; /* Зафиксировано относительно окна просмотра */
+    top: 0;         /* Прилегает к верхней части */
+    left: 0;        /* Прилегает к левому краю */
+    width: 100%;    /* Ширина на всю страницу */
+    height: 100%;   /* Высота на всю страницу */
+    background-color: #1a1a1ac8; /* Полупрозрачный черный фон */
+    backdrop-filter: blur(30%); /* Эффект размытия */
+    z-index: 999;   /* Уровень выше других элементов */
+    display: none;  /* Скрыт по умолчанию */
+}
+
+.blur-background.active {
+    display: block; /* Показываем фон, когда попап открыт */
+}
+
+
+/* Класс для обводки попапа при выигрыше X */
+.popup-win-x {
+    border-color: #5333D8; /* Фиолетовый цвет */
+}
+
+/* Класс для обводки попапа при выигрыше O */
+.popup-win-o {
+    border-color: #E07F2F; /* Оранжевый цвет */
+}
+
+/* Класс для кнопки при выигрыше X */
+.popup-button-win-x:hover  {
+    background-color: #5333D8; /* Фиолетовый цвет */
+    color: #FFF; 
+}
+
+/* Класс для кнопки при выигрыше O */
+.popup-button-win-o:hover  {
+    background-color: #E07F2F; /* Оранжевый цвет */
+    color: #FFF; 
+}
+
+.popup-button-tie:hover  {
+    background-color: #CFCFCF; /* Оранжевый цвет */
+    color: #2F2F2F ; 
+}
+
+.popup-tie {
+    border-color: #CFCFCF; /* Оранжевый цвет */
+}

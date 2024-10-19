@@ -1,0 +1,10 @@
+.game-board {
+    display: grid; /* Use grid layout for the board */
+    grid-template-columns: repeat(3, 170px); /* 3 columns of 170px */
+    grid-template-rows: repeat(3, 170px); /* 3 rows of 170px */
+    gap: 15px; /* Gap between cells */
+    width: 540px; /* Total width of the board */
+    height: 540px; /* Total height of the board */
+    margin-left: 70px; /* Adjust as needed */
+    margin-right: 100px; /* Adjust as needed */
+}

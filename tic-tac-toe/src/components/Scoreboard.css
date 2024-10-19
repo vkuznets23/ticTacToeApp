@@ -1,0 +1,43 @@
+.scoreboard {
+    font-size: 40px; /* Font size for the scoreboard */
+    color: #B3B3B3; /* Text color */
+    text-transform: uppercase; /* Transform text to uppercase */
+    margin-bottom: 100px; /* Space below the scoreboard */
+    margin-top: 30px; /* Space above the scoreboard */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space elements to the edges */
+    width: 1110px; /* Total width of the scoreboard */
+}
+
+/* ----------------- Player Styles ----------------- */
+.player {
+    display: flex; /* Use flexbox for player layout */
+    align-items: center; /* Center items vertically */
+    opacity: 0.3; /* Default opacity for inactive players */
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+.player.active {
+    opacity: 1; /* Full opacity for the active player */
+}
+
+.player-icon {
+    margin-right: 25px; /* Space to the right of the player icon */
+}
+
+/* ----------------- Score Separator Styles ----------------- */
+.score-separator {
+    margin: 0 10px; /* Space between player scores */
+}
+
+.iconCross {
+    width: 32px; /* Width of the cross icon */
+    height: 32px; /* Height of the cross icon */
+    object-fit: contain; /* Maintain aspect ratio for SVG */
+}
+
+.iconCircle {
+    width: 40px; /* Width of the circle icon */
+    height: 40px; /* Height of the circle icon */
+    object-fit: contain; /* Maintain aspect ratio for SVG */
+}

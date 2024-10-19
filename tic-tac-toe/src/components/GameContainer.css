@@ -1,0 +1,84 @@
+/* ----------------- Game Container Styles ----------------- */
+.game-container {
+    align-items: flex-end;
+    display: flex; /* Places the board and timer in a row */
+    justify-content: space-between; /* Space between elements */
+    width: 1110px; /* Width of the game container */
+}
+
+/* ----------------- Timer Styles ----------------- */
+.right-containert {
+    display: flex; /* Use flexbox for timer layout */
+    justify-content: space-between;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 30px; /* Font size for the timer */
+    color: #484848; /* Color of the timer text */
+    gap: 20px;
+}
+
+.left-containert {
+    display: flex; /* Use flexbox for timer layout */
+    justify-content: space-between;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 30px; /* Font size for the timer */
+    color: #484848; /* Color of the timer text */
+    gap: 35px;
+}
+
+.level-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 40px;
+}
+
+.restart-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    opacity: 0.3;
+    color: #B3B3B3;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    height: 45px;
+}
+
+.restart-container:hover {
+    opacity: 1;
+}
+
+.rules-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.timer-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    height: 45px;
+}
+
+.rulesIcon {
+    width: 42px; /* Set width for the timer icon */
+    height: 42px; /* Set height for the timer icon */
+    margin-right: 10px; /* Space to the right of the timer icon */
+}
+
+.iconRestart {
+    width: 42px; /* Set width for the timer icon */
+    height: 42px; /* Set height for the timer icon */
+    margin-right: 15px; /* Space to the right of the timer icon */
+}
+
+.iconTimer {
+    width: 45px; /* Set width for the timer icon */
+    height: 45px; /* Set height for the timer icon */
+    margin-right: 15px; /* Space to the right of the timer icon */
+}

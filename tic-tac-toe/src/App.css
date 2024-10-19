@@ -1,0 +1,7 @@
+body {
+  font-family: 'Archivo Black', sans-serif; /* Font family for the body */
+  background-color: #1A1A1A; /* Background color of the page */
+  align-items: center; /* Center items vertically */
+  display: flex; /* Use flexbox layout */
+  flex-direction: column; /* Stack items vertically */
+}
