@@ -86,8 +86,7 @@ const Board = ({ board, setBoard, currentPlayer, setCurrentPlayer, setTimerActiv
                         <button 
                             className={`popup-button ${winner === 'X' ? 'popup-button-win-x' : winner === 'O' ? 'popup-button-win-o' : 'popup-button-tie'}`} 
                             onClick={handleClosePopup}
-                        >
-                            New Game
+                        >New Game
                         </button>
                     </div>
                 </div>
