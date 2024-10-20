@@ -1,7 +1,7 @@
 import React from 'react';
 import crossIcon from '../icons/cross.svg';
 import circleIcon from '../icons/circle.svg';
-import './Scoreboard.css'; // Подключите стили для scoreboard
+import '../styles/Scoreboard.css'; // Подключите стили для scoreboard
 
 const Scoreboard = ({ currentPlayer, scores }) => {
     return (

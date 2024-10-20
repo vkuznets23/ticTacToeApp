@@ -1,7 +1,7 @@
 import React, { useState }from 'react'
 import Cell from './Cell';
-import './Board.css';
-import './Popup.css'
+import '../styles/Board.css';
+import '../styles/Popup.css'
 
 const Board = ({ board, setBoard, currentPlayer, setCurrentPlayer, setTimerActive, setTime, updateScore }) => {
     const [winner, setWinner] = useState(null); // Состояние для победителя

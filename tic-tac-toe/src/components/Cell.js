@@ -1,7 +1,7 @@
 import React from 'react';
 import crossIcon from '../icons/cross.svg'; // Путь к иконке крестика
 import circleIcon from '../icons/circle.svg'; // Путь к иконке нолика
-import './Cell.css'; // Подключите стили для клеток
+import '../styles/Cell.css'; // Подключите стили для клеток
 
 const Cell = ({ value, onClick }) => {
     const cellClass = value ? 'cell occupied' : 'cell';

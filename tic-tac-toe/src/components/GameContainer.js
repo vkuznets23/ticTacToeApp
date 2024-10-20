@@ -3,7 +3,7 @@ import timerIcon from '../icons/ph_timer.svg';
 import restartIcon from '../icons/restart.svg';
 import helpIcon from '../icons/help.svg';
 import Board from './Board';
-import './GameContainer.css'; // Подключите стили для game container
+import '../styles/GameContainer.css'; 
 
 const GameContainer = ( { currentPlayer, setCurrentPlayer, updateScore }) => {
 
@@ -28,6 +28,9 @@ const GameContainer = ( { currentPlayer, setCurrentPlayer, updateScore }) => {
         return () => clearInterval(timer); // Очистка таймера при размонтировании компонента
     }, [timerActive]);
 
+    useEffect(() => {
+        setTimerActive(true); // Start the timer when the component mounts
+    }, []);
 
     return (
         <div className="game-container">
