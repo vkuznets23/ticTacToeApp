@@ -1,30 +1,19 @@
-import React, { useState } from 'react';
-import './App.css';
-import Scoreboard from './components/Scoreboard';
-import GameContainer from './components/GameContainer';
+import React from 'react';
+import './App.css'; 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/home';  // Предположительно твоя домашняя страница
+import Game from './pages/game';
 
 function App() {
-    const [currentPlayer, setCurrentPlayer] = useState('X');
-    const [scores, setScores] = useState({ X: 0, O: 0 });
-
-    const updateScore = (winner) => {
-        if (winner) {
-            setScores((prevScores) => ({
-                ...prevScores,
-                [winner]: prevScores[winner] + 1, // Increment the score of the winner
-            }));
-        }
-    };
-
     return (
-        <div className="App">
-            <Scoreboard currentPlayer={currentPlayer} scores={scores} />
-            <GameContainer 
-                currentPlayer={currentPlayer}
-                setCurrentPlayer={setCurrentPlayer}
-                updateScore={updateScore}
-            />
-        </div>
+        <Router>
+            <div>
+                <Routes>
+                    <Route path="/" element={<Home />} />   {/* Маршрут для главной страницы */}
+                    <Route path="/game" element={<Game />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
