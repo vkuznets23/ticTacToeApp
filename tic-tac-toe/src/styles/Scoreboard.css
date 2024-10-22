@@ -1,4 +1,5 @@
 .scoreboard {
+    position: relative;
     font-size: 40px; /* Font size for the scoreboard */
     color: #B3B3B3; /* Text color */
     text-transform: uppercase; /* Transform text to uppercase */
