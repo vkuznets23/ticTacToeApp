@@ -13,7 +13,7 @@ const Home = () => {
             <img src={circleIcon} alt="O" className="circleMain"/>
             <img src={crossIcon} alt="X" className="crossMain"/>
       </div>
-      <Link to="/game" className="button-link">Start Game</Link>
+      <Link to="/chooseLevel" className="button-link">Start Game</Link>
     </div>
   );
 };
