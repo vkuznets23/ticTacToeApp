@@ -4,7 +4,7 @@ import '../styles/Board.css';
 import '../styles/Popup.css'
 
 const Board = ({ board, setBoard, currentPlayer, setCurrentPlayer, setTimerActive, setTime, updateScore }) => {
-    const [winner, setWinner] = useState(null); // Состояние для победителя
+    const [winner, setWinner] = useState(null);
     const [isPopupVisible, setPopupVisible] = useState(false);
 
     // Winning patterns for the game

@@ -9,7 +9,10 @@ const Level2 = () => {
     return (
         <div>
             <Scoreboard currentPlayer={currentPlayer} scores={scores}/>
-            <Board />
+            <Board 
+            currentPlayer={currentPlayer}
+            setCurrentPlayer={setCurrentPlayer}
+            />
         </div>
     );
 };
